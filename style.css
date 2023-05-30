@@ -1,0 +1,149 @@
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:wght@700&family=Montserrat:wght@500;700&display=swap');
+
+:root {
+  --dark-cyan: hsl(158, 36%, 37%);
+  --very-dark-cyan: hsl(157, 46%, 17%);
+  --cream: hsl(30, 38%, 92%);
+  --very-dark-blue: hsl(212, 21%, 14%);
+  --dark-grayish-blue: hsl(228, 12%, 48%);
+  --white: hsl(0, 0%, 100%);
+
+  --primary-family: 'Fraunces', serif;
+  --secondary-family: 'Montserrat', sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: var(--cream);
+  font-family: var(--secondary-family);
+  font-weight: 500;
+}
+
+.container {
+  align-items: center;
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+}
+
+.card {
+  display: grid;
+  align-content: center;
+  margin: 20px;
+  max-width: 450px;
+}
+
+picture {
+  display: flex;
+}
+
+.card__image {
+  border-radius: 12px 12px 0 0;
+  width: 100%;
+}
+
+.card__content {
+  background: var(--white);
+  display: flex;
+  flex-direction: column;
+  padding: 24px;
+}
+
+.card__category {
+  color: var(--dark-grayish-blue);
+  letter-spacing: 6px;
+  text-transform: uppercase;
+}
+
+.card__title {
+  color: var(--very-dark-blue);
+  font-family: var(--primary-family);
+  font-weight: 700;
+  margin: 16px 0 24px;
+}
+
+.card__description {
+  color: var(--dark-grayish-blue);
+  font-size: 14px;
+  margin-bottom: 30px;
+}
+
+.card__price {
+  align-items: center;
+  display: flex;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+.card__price__discount {
+  color: var(--dark-cyan);
+  font-family: var(--primary-family);
+  font-size: 32px;
+}
+
+.card__price__original {
+  color: var(--dark-grayish-blue);
+  text-decoration: line-through;
+}
+
+
+.card__button {
+  background: var(--dark-cyan);
+  border: none;
+  border-radius: 8px;
+  color: var(--white);
+  cursor: pointer;
+  display: flex;
+  font-weight: 700;
+  gap: 8px;
+  justify-content: center;
+  padding: 16px;
+}
+
+.card__button::before {
+  background-image: url(./images/icon-cart.svg);
+  content: '';
+  height: 16px;
+  width: 15px;
+}
+
+.card__button:is(:hover, :focus) {
+  background: var(--very-dark-cyan);
+}
+
+@media (min-width:600px) {
+  .card {
+    grid-template-columns: 1fr 1fr;
+    margin: 10px;
+    max-width: 600px;
+  }
+
+  .card__image {
+    border-radius: 12px 0 0 12px;
+  }
+
+  .card__content {
+    border-radius: 0 12px 12px 0;
+    padding: 32px;
+  }
+}
+
+.footer {
+  bottom: 0;
+  text-align: center;
+  position: fixed;
+  width: 100%;
+}
+
+.attribution {
+  font-size: 12px;
+  text-align: center;
+}
+
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
